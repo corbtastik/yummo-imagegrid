@@ -18,22 +18,41 @@
     <main>
         <div id="ig-{{ ig.name }}">
             <h3>{{ ig.description }}</h3>
-            {% for column in ig.images %}
-                {% assign column-index = forloop.index %}
-                {% for image in column %}
+            <div class="columns is-mobile">
+            {%- for column in ig.images -%}
+            {% assign column-index = forloop.index %}
+                <div id="ig-{{ ig.name }}-{{ column-index }}" class="column">
+                {%- for image in column -%}
                     {% assign row-index = forloop.index %}
                     <img class="image square"
-                         onclick="ImageGrids.instance('{{ ig.name }}').openImage('{{ ig.name }}-image-{{ row-index }}-{{ column-index }}');"
+                         onclick="ImageGrids.instance('{{ ig.name }}').openImage('{{ image.src }}');"
                          alt="{{ image.caption }}"
                          src="{{ image.src }}">
-                {% endfor %}
-            {% endfor %}
+                {%- endfor %}
+                </div>
+            {%- endfor %}
+            </div>
+        </div>
+        <div id="ig-target-{{ ig.name }}" class="no-display" style="display: none;">
+            <div class="columns is-mobile">
+                <div id="ig-{{ ig.name }}-target-column" class="column">
+                    <img id="{{ ig.name }}-image-{{ row-index }}-{{ column-index }}"
+                         class="image square max"
+                         onclick="ImageGrids.instance('{{ ig.name }}').closeImage('ig-pets-image-0');"
+                         alt="Texas Ranger Bucky."
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/ranger-bucky.png"
+                         style="display: none;">
+                    <div id="ig-pets-caption-0" class="caption" style="display: none;">
+                        <p>Texas Ranger Bucky.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
     </footer>
 </div>
 <script src="./assets/js/yummo/utils/utils.js"></script>
-<script src="./assets/js/yummo/imagegrid/imagegrid.js"></script>
+<script src="./assets/js/yummo/imagegrid/image-grid.js"></script>
 </body>
 </html>
