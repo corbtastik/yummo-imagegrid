@@ -7,19 +7,22 @@
   "font-primary": "Inconsolata",
   "ig": {
     "name": "pets",
-    "description": "The Martin Pets",
-    "images": [{
-      "src": "https://storage.googleapis.com/corbs-foto/yolo/yolo/ranger-bucky.png",
-      "caption": "Texas Ranger Bucky"
-    },{
-      "src": "https://storage.googleapis.com/corbs-foto/yolo/yolo/nacho.png",
-      "caption": "R.I.P. Nachooooooo!!!"
-    },{
-      "src": "https://storage.googleapis.com/corbs-foto/yolo/yolo/moonpie-house-cat.png",
-      "caption": "Moonpie the house kitty, we see your poochie poo!"
-    }, {
-      "src": "https://storage.googleapis.com/corbs-foto/yolo/yolo/traveling-bucky.png",
-      "caption": "Bucky itches his nose!"
-    }]
+    "description": "Fur Babies",
+    "images": [
+      [{
+        "src": "https://storage.googleapis.com/corbs-foto/yolo/yolo/ranger-bucky.png",
+        "caption": "Texas Ranger Bucky"
+      },{
+        "src": "https://storage.googleapis.com/corbs-foto/yolo/yolo/nacho.png",
+        "caption": "R.I.P. Nachooooooo!!!"
+      }],
+      [{
+        "src": "https://storage.googleapis.com/corbs-foto/yolo/yolo/moonpie-house-cat.png",
+        "caption": "Moonpie the house kitty, we see your poochie poo!"
+      },{
+        "src": "https://storage.googleapis.com/corbs-foto/yolo/yolo/traveling-bucky.png",
+        "caption": "Bucky itches his nose!"
+      }]
+    ]
   }
 }

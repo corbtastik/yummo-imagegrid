@@ -18,28 +18,16 @@
     <main>
         <div id="ig-{{ ig.name }}">
             <h3>{{ ig.description }}</h3>
-            <div class="columns is-mobile">
-                <div id="ig-pets-0" class="column">
+            {% for column in ig.images %}
+                {% assign column-index = forloop.index %}
+                {% for image in column %}
+                    {% assign row-index = forloop.index %}
                     <img class="image square"
-                         onclick="ImageGrids.instance('ig-pets').openImage('ig-pets-image-0');"
-                         alt="Texas Ranger Bucky."
-                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/ranger-bucky.png">
-                    <img class="image square"
-                         onclick="ImageGrids.instance('ig-pets').openImage('ig-pets-image-1');"
-                         alt="R.I.P. Nachooooooo!!!"
-                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/nacho.png">
-                </div>
-                <div id="ig-pets-1" class="column">
-                    <img class="image square"
-                         onclick="ImageGrids.instance('ig-pets').openImage('ig-pets-image-2');"
-                         alt="Moonpie the house kitty, we see your poochie poo!"
-                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/moonpie-house-cat.png">
-                    <img class="image square"
-                         onclick="ImageGrids.instance('ig-pets').openImage('ig-pets-image-3');"
-                         alt="Bucky itches his nose."
-                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/traveling-bucky.png">
-                </div>
-            </div>
+                         onclick="ImageGrids.instance('{{ ig.name }}').openImage('{{ ig.name }}-image-{{ row-index }}-{{ column-index }}');"
+                         alt="{{ image.caption }}"
+                         src="{{ image.src }}">
+                {% endfor %}
+            {% endfor %}
         </div>
     </main>
     <footer>
