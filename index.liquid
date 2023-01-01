@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ font-secondary }}:400,400i,700,700i|{{ font-primary }}:400,400i,700,700i">
+    <link rel="stylesheet" href="{{ stylesheet }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="yummo-site" class="{{ theme }}">
+<div class="container center">
+    <header>
+        <div class="yolo-header">
+            <h2 class="description no-toc">{{ description }}</h2>
+        </div>
+    </header>
+    <main>
+        <div id="ig-{{ ig.name }}">
+            <h3>{{ ig.description }}</h3>
+            <div class="columns is-mobile">
+                <div id="ig-pets-0" class="column">
+                    <img class="image square"
+                         onclick="ImageGrids.instance('ig-pets').openImage('ig-pets-image-0');"
+                         alt="Texas Ranger Bucky."
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/ranger-bucky.png">
+                    <img class="image square"
+                         onclick="ImageGrids.instance('ig-pets').openImage('ig-pets-image-1');"
+                         alt="R.I.P. Nachooooooo!!!"
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/nacho.png">
+                </div>
+                <div id="ig-pets-1" class="column">
+                    <img class="image square"
+                         onclick="ImageGrids.instance('ig-pets').openImage('ig-pets-image-2');"
+                         alt="Moonpie the house kitty, we see your poochie poo!"
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/moonpie-house-cat.png">
+                    <img class="image square"
+                         onclick="ImageGrids.instance('ig-pets').openImage('ig-pets-image-3');"
+                         alt="Bucky itches his nose."
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/traveling-bucky.png">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</div>
+<script src="./assets/js/yummo/utils/utils.js"></script>
+<script src="./assets/js/yummo/imagegrid/imagegrid.js"></script>
+</body>
+</html>

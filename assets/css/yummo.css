@@ -1135,7 +1135,7 @@ input[type="search"]:hover { outline: none; }
 
 .dark-theme ::placeholder { color: #7d0249; }
 
-#yummo-site { opacity: 0; transition: opacity 2s; }
+#yummo-site { opacity: 1; transition: opacity 2s; }
 
 .yolo-header { margin-bottom: 1rem; }
 
