@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Yummo Image Grid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i|Inconsolata:400,400i,700,700i">
+    <link rel="stylesheet" href="./assets/css/yummo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="yummo-site" class="dark-theme">
+<div class="container center">
+    <header>
+        <div class="yolo-header">
+            <h2 class="description no-toc">Yummo Image Grid Demo Page</h2>
+        </div>
+    </header>
+    <main>
+        <div id="ig-pets">
+            <h3>Fur Babies</h3>
+            <div class="columns is-mobile">
+                    <div id="ig-pets-1" class="column">
+                            <img class="image square"
+                                 onclick="ImageGrids.instance('pets').openImage('pets-image-1-1');"
+                                 alt="Texas Ranger Bucky"
+                                 src="https://storage.googleapis.com/corbs-foto/yolo/yolo/ranger-bucky.png">
+                            <img class="image square"
+                                 onclick="ImageGrids.instance('pets').openImage('pets-image-2-1');"
+                                 alt="R.I.P. Nachooooooo!!!"
+                                 src="https://storage.googleapis.com/corbs-foto/yolo/yolo/nacho.png">
+                    </div>
+                    <div id="ig-pets-2" class="column">
+                            <img class="image square"
+                                 onclick="ImageGrids.instance('pets').openImage('pets-image-1-2');"
+                                 alt="Moonpie the house kitty, we see your poochie poo!"
+                                 src="https://storage.googleapis.com/corbs-foto/yolo/yolo/moonpie-house-cat.png">
+                            <img class="image square"
+                                 onclick="ImageGrids.instance('pets').openImage('pets-image-2-2');"
+                                 alt="Bucky itches his nose!"
+                                 src="https://storage.googleapis.com/corbs-foto/yolo/yolo/traveling-bucky.png">
+                    </div>
+            </div>
+        </div>
+        <div id="ig-target-pets" class="no-display" style="display: none;">
+            <div class="columns is-mobile">
+                <div id="ig-pets-target-column" class="column">
+                    <img id="pets-image-2-2"
+                         class="image square max"
+                         onclick="ImageGrids.instance('pets').closeImage('ig-pets-image-0');"
+                         alt="Texas Ranger Bucky."
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/ranger-bucky.png"
+                         style="display: none;">
+                    <div id="ig-pets-caption-0" class="caption" style="display: none;">
+                        <p>Texas Ranger Bucky.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</div>
+<script src="./assets/js/yummo/utils/utils.js"></script>
+<script src="./assets/js/yummo/imagegrid/imagegrid.js"></script>
+</body>
+</html>

@@ -19,26 +19,41 @@
         <div id="ig-{{ ig.name }}">
             <h3>{{ ig.description }}</h3>
             <div class="columns is-mobile">
-            {%- for column in ig.images -%}
-            {% assign column-index = forloop.index %}
-                <div id="ig-{{ ig.name }}-{{ column-index }}" class="column">
-                {%- for image in column -%}
-                    {% assign row-index = forloop.index %}
-                    <img class="image square"
-                         onclick="ImageGrids.instance('{{ ig.name }}').openImage('{{ image.src }}');"
-                         alt="{{ image.caption }}"
-                         src="{{ image.src }}">
+                {%- for column in ig.images -%}
+                    {% assign column-index = forloop.index %}
+                    <div id="ig-{{ ig.name }}-{{ column-index }}" class="column">
+                        {%- for image in column -%}
+                            {% assign row-index = forloop.index %}
+                            <img class="image square"
+                                 onclick="ImageGrids.instance('{{ ig.name }}').openImage('{{ ig.name }}-image-{{ row-index }}-{{ column-index }}');"
+                                 alt="{{ image.caption }}"
+                                 src="{{ image.src }}">
+                        {%- endfor %}
+                    </div>
                 {%- endfor %}
-                </div>
-            {%- endfor %}
             </div>
         </div>
         <div id="ig-target-{{ ig.name }}" class="no-display" style="display: none;">
             <div class="columns is-mobile">
                 <div id="ig-{{ ig.name }}-target-column" class="column">
+                    {%- for column in ig.images -%}
+                        {% assign column-index = forloop.index %}
+                        <div id="ig-{{ ig.name }}-{{ column-index }}" class="column">
+                            {%- for image in column -%}
+                                {% assign row-index = forloop.index %}
+                                <img class="image square"
+                                     onclick="ImageGrids.instance('{{ ig.name }}').closeImage('{{ ig.name }}-image-{{ row-index }}-{{ column-index }}');"
+                                     alt="{{ image.caption }}"
+                                     src="{{ image.src }}">
+                            {%- endfor %}
+                        </div>
+                    {%- endfor %}
+                </div>
+
+                <div id="ig-{{ ig.name }}-target-column" class="column">
                     <img id="{{ ig.name }}-image-{{ row-index }}-{{ column-index }}"
                          class="image square max"
-                         onclick="ImageGrids.instance('{{ ig.name }}').closeImage('ig-pets-image-0');"
+                         onclick="ImageGrids.instance('{{ ig.name }}').closeImage('{{ ig.name }}-image-{{ row-index }}-{{ column-index }}');"
                          alt="Texas Ranger Bucky."
                          src="https://storage.googleapis.com/corbs-foto/yolo/yolo/ranger-bucky.png"
                          style="display: none;">
@@ -48,11 +63,53 @@
                 </div>
             </div>
         </div>
+        <div id="ig-target-ig-pets" class="no-display" style="display: none;">
+            <div class="columns is-mobile">
+                <div id="ig-pets-target-column" class="column">
+                    <img id="ig-pets-image-0"
+                         class="image square max"
+                         onclick="ImageGrids.instance('ig-pets').closeImage('ig-pets-image-0');"
+                         alt="Texas Ranger Bucky."
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/ranger-bucky.png"
+                         style="display: none;">
+                    <div id="ig-pets-caption-0" class="caption" style="display: none;">
+                        <p>Texas Ranger Bucky.</p>
+                    </div>
+                    <img id="ig-pets-image-1"
+                         class="image square max"
+                         onclick="ImageGrids.instance('ig-pets').closeImage('ig-pets-image-1');"
+                         alt="R.I.P. Nachooooooo!!!"
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/nacho.png"
+                         style="display: none;">
+                    <div id="ig-pets-caption-1" class="caption" style="display: none;">
+                        <p>R.I.P. Nachooooooo!!!</p>
+                    </div>
+                    <img id="ig-pets-image-2"
+                         class="image square max"
+                         onclick="ImageGrids.instance('ig-pets').closeImage('ig-pets-image-2');"
+                         alt="Moonpie the house kitty, we see your poochie poo!"
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/moonpie-house-cat.png"
+                         style="display: none;">
+                    <div id="ig-pets-caption-2" class="caption" style="display: none;">
+                        <p>Moonpie the house kitty, we see your poochie poo!</p>
+                    </div>
+                    <img id="ig-pets-image-3"
+                         class="image square max"
+                         onclick="ImageGrids.instance('ig-pets').closeImage('ig-pets-image-3');"
+                         alt="Bucky itches his nose."
+                         src="https://storage.googleapis.com/corbs-foto/yolo/yolo/traveling-bucky.png"
+                         style="display: none;">
+                    <div id="ig-pets-caption-3" class="caption" style="display: none;">
+                        <p>Bucky itches his nose.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
     </footer>
 </div>
 <script src="./assets/js/yummo/utils/utils.js"></script>
-<script src="./assets/js/yummo/imagegrid/image-grid.js"></script>
+<script src="./assets/js/yummo/imagegrid/imagegrid.js"></script>
 </body>
 </html>
